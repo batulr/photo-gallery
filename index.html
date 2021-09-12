@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+
+    <!--Stylesheet included-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script>
+      window.onload = function () {
+        // load thumbnails
+        photo = document.querySelectorAll(".photo-item");
+        photoLength = photo.length;
+        for (i = 0; i < photoLength; i++) {
+          photoW = photo[i].naturalWidth;
+          photoH = photo[i].naturalHeight;
+          if (photoW >= photoH) {
+            photo[i].style.height = "100px";
+          } else {
+            photo[i].style.width = "100px";
+          }
+        }
+        conentW = photoLength * 115;
+        document.getElementById("photo-container").style.width = conentW + "px";
+
+        // load first photo
+        firstPhoto = document.querySelectorAll(".photo-item");
+        firstPhoto = firstPhoto[0];
+        firstPhotoUrl = firstPhoto.src;
+        firstPhotoAlt = firstPhoto.alt;
+        document.getElementById("photo-display").innerHTML =
+          '<img src="' + firstPhotoUrl + '" id="selected-photo" alt="">';
+        document.getElementById("commentary").innerHTML = firstPhotoAlt;
+      };
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <h1>Responsive Image Gallery</h1>
+      <p>A gallery made using html, css and javascript!</p>
+    </header>
+    <div id="photo-view-container">
+      <div id="photo-display"></div>
+      <div id="commentary"></div>
+      <div id="photo-container-holder">
+        <div id="photo-container" style="margin-left: 0">
+          <div class="photo-holder">
+            <img
+              src="img/3.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Dining table"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/4.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Fried Rice"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/6.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Greens"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/5.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Garlic Bread"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/7.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Pizza"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/2.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Cupcakes"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/8.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Sandwich and Egg"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/9.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Chicken Starters"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/10.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Chocolates"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/1.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Burger and Fries"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/11.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Noodles"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/12.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Pasta"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/13.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Paneer Tikka"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/14.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Donuts"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/15.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="Indian Sweets"
+            />
+          </div>
+          <div class="photo-holder">
+            <img
+              src="img/16.jpg"
+              onclick="viewPhoto(this)"
+              class="photo-item"
+              alt="IceCream"
+            />
+          </div>
+        </div>
+      </div>
+      <img
+        id="left"
+        src="https://webdesign-assistant.com/images/dummy/left.png"
+        onclick="leftRight(this)"
+      />
+      <img
+        id="right"
+        src="https://webdesign-assistant.com/images/dummy/right.png"
+        onclick="leftRight(this)"
+      />
+    </div>
+    <footer>
+      Website Credits:
+      <span>Batul</span>
+    </footer>
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
